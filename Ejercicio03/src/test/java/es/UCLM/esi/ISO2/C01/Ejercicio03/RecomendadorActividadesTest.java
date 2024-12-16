@@ -22,5 +22,8 @@ public class RecomendadorActividadesTest {
     	assertEquals(actual, expected);
     }
     
+    //segundo metodo recomendacionActividad
+    
+    
 
 }
