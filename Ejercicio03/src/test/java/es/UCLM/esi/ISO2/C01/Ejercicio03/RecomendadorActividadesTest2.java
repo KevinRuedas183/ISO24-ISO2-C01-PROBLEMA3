@@ -16,7 +16,7 @@ public class RecomendadorActividadesTest2 {
     public void setUp() throws Exception {
         // Configuración inicial antes de cada prueba
         recomendador = new RecomendadorActividades();
-        usuario = new Usuario(0, 'A', false, false, false, false);
+        usuario = new Usuario(00000000, 'A', false, false, false, false);
         espacio = new EspacioDeOcio(0, 0, false, 0, 0, pronostico);
         pronostico = new PronosticoMeteorologico(0, 0, null);
     }
@@ -49,16 +49,18 @@ public class RecomendadorActividadesTest2 {
     /* test 2 (salida a false)*/
     @Test 
     public void testRecomendacionActividadFALSE() throws Exception {
-        // Configuración del usuario (usuario válido)
-        usuario.setSano(true);
-        usuario.setCovidSuperado(true);
-        usuario.setTieneCartillaVacunacion(true);
+        /*Configuración del usuario (usuario no válido)
+    	no ponemos nada ya que en el before ya pusimos a false todo (lo que
+    	justo necesitamos aqui*/
 
-        // Configuración del pronóstico (clima adecuado para senderismo)
-        pronostico.setTemperatura(15); // 15 grados Celsius
-        pronostico.setPorcentajeHumedadRelativa(50);
+        // segunda decision
+        pronostico.setTemperatura(10); // 15 grados Celsius
+        pronostico.setPorcentajeHumedadRelativa(25);
         pronostico.setPrecipitaciones(Precipitaciones.nubes);
         espacio.setPronostico(pronostico);
+        
+        
+        // tercera decision 
 
         // Configuración del espacio (aforo disponible para senderismo)
         espacio.setAforoSenderismo(10);
