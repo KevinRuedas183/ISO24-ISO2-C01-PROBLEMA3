@@ -123,7 +123,7 @@ public class RecomendadorActividades {
     	return resultado;
     }
 
-    private boolean esClimaEsquiable(PronosticoMeteorologico pronostico) {
+    boolean esClimaEsquiable(PronosticoMeteorologico pronostico) {
         boolean resultado = false;
     	
     	if(pronostico.getTemperatura() < 0
@@ -136,7 +136,7 @@ public class RecomendadorActividades {
     	
     
 
-    private boolean esClimaSenderismo(PronosticoMeteorologico pronostico) {
+     boolean esClimaSenderismo(PronosticoMeteorologico pronostico) {
         boolean resultado = false;
     	if(pronostico.getTemperatura() >= 0 && pronostico.getTemperatura() < 15
                 && pronostico.getPrecipitaciones() != Precipitaciones.lluvia) {
@@ -146,7 +146,7 @@ public class RecomendadorActividades {
     }
 
     
-    private boolean esClimaTurismo(PronosticoMeteorologico pronostico) {
+     boolean esClimaTurismo(PronosticoMeteorologico pronostico) {
        boolean resultado = false;
        if(TemperaturaTurismo(pronostico)
                 && (NoPrecipitacionesNubesLLuvia(pronostico))
@@ -156,7 +156,7 @@ public class RecomendadorActividades {
        return resultado;
     }
 
-    private boolean esClimaCañas(PronosticoMeteorologico pronostico) {
+     boolean esClimaCañas(PronosticoMeteorologico pronostico) {
         boolean resultado = false;
         if(pronostico.getTemperatura() >= 25 && pronostico.getTemperatura() < 35
                 && pronostico.getPrecipitaciones() != Precipitaciones.lluvia) {
@@ -165,7 +165,7 @@ public class RecomendadorActividades {
         return resultado;
     }
 
-    private boolean esClimaPlayaPiscina(PronosticoMeteorologico pronostico) {
+     boolean esClimaPlayaPiscina(PronosticoMeteorologico pronostico) {
         boolean resultado = false;
     	if(pronostico.getTemperatura() > 30
                 && pronostico.getPrecipitaciones() != Precipitaciones.lluvia) {
